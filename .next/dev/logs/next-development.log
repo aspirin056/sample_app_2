@@ -1,0 +1,39 @@
+[00:00:04.482] Server  LOG     ✓ Ready in 3.9s
+[00:00:07.539] Server  LOG     ○ Compiling / ...
+[00:00:17.113] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:17.251] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary name="/" loading={null}>
+        <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+          <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+            <RedirectBoundary>
+              <RedirectErrorBoundary router={{...}}>
+                <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} segmentPath={[...]} ...>
+                  <SegmentViewNode type="page" pagePath="page.tsx">
+                    <SegmentTrieNode>
+                    <ClientPageRoot Component={function QuizPage} serverProvidedParams={{...}}>
+                      <QuizPage params={Promise} searchParams={Promise}>
+                        <div className="min-h-scre...">
+                          <div className="max-w-lg w...">
+                            <h1>
+                            <div className="text-cente...">
+                              <p>
+                              <p className="text-2xl font-bold text-amber-800 mt-2">
++                               {"What is \"이월\" in English?"}
+-                               {"What is \"September\" in Korean?"}
+                            ...
+                  ...
+                ...
+
